@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<title>Might Hunter FX | Scalper EA</title>
+<style>
+:root{color-scheme:dark;--bg:#07111f;--panel:#101e31;--line:#263a52;--text:#edf4ff;--muted:#a7b8ce;--green:#35d39a;--red:#ff6b79;--blue:#74a7ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,#142c4c 0,transparent 38%),var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:1050px;margin:auto;padding:24px}.nav{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:10px 0 28px}.brand{font-weight:800;letter-spacing:.4px}.brand span{color:var(--green)}.tag{border:1px solid var(--line);border-radius:999px;padding:6px 11px;color:var(--muted);font-size:13px}
+.hero{padding:38px 0 30px;display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:center}.eyebrow{color:var(--green);font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:12px}h1{font-size:clamp(38px,7vw,66px);line-height:1.04;margin:14px 0}p{color:var(--muted)}.hero p{font-size:18px;max-width:620px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-block;padding:12px 17px;border-radius:12px;font-weight:750;text-decoration:none;border:1px solid var(--line);color:var(--text)}.primary{background:var(--green);color:#052016;border-color:var(--green)}.chart{border:1px solid var(--line);border-radius:20px;background:linear-gradient(160deg,#14263d,#0a1525);padding:18px;min-height:245px}.chart small{color:var(--muted)}.bars{height:125px;display:flex;align-items:center;gap:7px;border-bottom:1px solid #32465c;margin:18px 0}.candle{width:10px;position:relative;border-radius:2px}.candle:before{content:"";position:absolute;width:2px;height:calc(100% + 18px);left:4px;top:-9px;background:currentColor}.up{background:var(--green);color:var(--green)}.down{background:var(--red);color:var(--red)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0 42px}.stat,.card{background:rgba(16,30,49,.88);border:1px solid var(--line);border-radius:16px;padding:18px}.stat b{display:block;font-size:22px}.stat span{font-size:13px;color:var(--muted)}h2{font-size:28px;margin:12px 0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card h3{margin:4px 0 8px}.symbol{color:var(--green);font-weight:800}.notice{border:1px solid #765f32;background:#2b2518;color:#f7dfaa;padding:16px;border-radius:14px;margin:28px 0}.notice p{color:#f7dfaa;margin:5px 0 0}.steps{padding-left:22px;color:var(--muted)}footer{border-top:1px solid var(--line);margin-top:42px;padding:24px 0;color:var(--muted);font-size:13px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:16px}.stats{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr}.wrap{padding:18px}.chart{min-height:220px}}
+</style>
+</head>
+<body><main class="wrap">
+<header class="nav"><div class="brand">MIGHT HUNTER <span>FX</span></div><div class="tag">MT5 EXPERT ADVISOR</div></header>
+<section class="hero">
+<div><div class="eyebrow">Automated trading project</div><h1>Trade with a plan.<br><span style="color:var(--green)">Protect your risk.</span></h1>
+<p>Might Hunter FX Scalper is an Expert Advisor project for demo testing on Exness MetaTrader 5. It is designed to look for both BUY and SELL setups on EURUSD M5.</p>
+<div class="actions"><a class="btn primary" href="MightHunterFX_Scalper.mq5" download>Download EA source (.mq5)</a><a class="btn" href="#strategy">View strategy</a></div></div>
+<div class="chart"><small>EURUSD · M5 · illustrative chart only</small><div class="bars">
+<div class="candle up" style="height:30%"></div><div class="candle down" style="height:22%"></div><div class="candle up" style="height:38%"></div><div class="candle up" style="height:47%"></div><div class="candle down" style="height:32%"></div><div class="candle up" style="height:55%"></div><div class="candle down" style="height:42%"></div><div class="candle up" style="height:63%"></div><div class="candle up" style="height:72%"></div><div class="candle down" style="height:49%"></div><div class="candle up" style="height:80%"></div><div class="candle up" style="height:67%"></div><div class="candle down" style="height:58%"></div><div class="candle up" style="height:88%"></div></div><div style="display:flex;justify-content:space-between"><b>BUY / SELL logic</b><span class="symbol">Risk-first design</span></div></div>
+</section>
+<section class="stats"><div class="stat"><b>EURUSD</b><span>Initial symbol</span></div><div class="stat"><b>M5</b><span>Chart timeframe</span></div><div class="stat"><b>0.5%</b><span>Target risk per trade</span></div><div class="stat"><b>2%</b><span>Daily equity-loss lock</span></div></section>
+<section id="strategy"><h2>How the EA is designed</h2><div class="cards">
+<div class="card"><div class="symbol">01 · ENTRY</div><h3>BUY and SELL</h3><p>EMA crossover with RSI confirmation. It checks completed candles rather than repeatedly entering on the same candle.</p></div>
+<div class="card"><div class="symbol">02 · PROTECTION</div><h3>Stop and target</h3><p>ATR-based stop-loss and a take-profit target set at 1.5 times the initial stop distance.</p></div>
+<div class="card"><div class="symbol">03 · FILTERS</div><h3>Risk controls</h3><p>Position sizing from estimated stop-loss cash risk, spread filter, one position at a time, and daily equity-loss lock.</p></div></div></section>
+<div class="notice"><b>Risk warning</b><p>This EA is experimental code, not a verified profitable system. Test and inspect it on a demo account first. Slippage, commissions, spread, broker settings, and gaps can cause losses beyond the intended amount. The daily lock is not a guarantee against loss.</p></div>
+<section><h2>Setup from your Android phone</h2><ol class="steps"><li>Download the EA source file using the button above after publishing this folder.</li><li>Use a trusted Windows MT5 computer or compatible Windows VPS to open the file in MetaEditor and compile it into an .ex5 file.</li><li>Run the compiled EA in Strategy Tester and on an Exness demo account before considering any live trading.</li><li>Keep AutoTrading disabled until you understand the settings and have checked the test results.</li></ol><p>Android MT5 can monitor trades, but it does not run custom Expert Advisors directly.</p></section>
+<footer>© Might Hunter FX · Demo testing only · No profit guarantees. This starter website has no payment system, user accounts, or licence-key validation enabled.</footer>
+</main></body></html>
